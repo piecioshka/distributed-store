@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+let api = {
     create(key, value) {
         return new Promise((resolve) => {
             localStorage.setItem(key, value);
@@ -11,18 +11,29 @@ module.exports = {
     read(key) {
         return new Promise((resolve) => {
             let status = localStorage.getItem(key);
+
+            if (status === null) {
+                status = undefined;
+            }
+
             resolve(status);
         });
     },
 
     update(name, value) {
-        return this.create.apply(this, arguments);
+        return api.create.apply(api, arguments);
     },
 
     delete(key) {
         return new Promise((resolve) => {
             localStorage.removeItem(key);
-            resolve();
+            api.read(key)
+                .then((status) => {
+                    return status === undefined;
+                })
+                .then(resolve);
         });
     }
 };
+
+module.exports = api;

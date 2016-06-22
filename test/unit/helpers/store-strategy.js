@@ -9,8 +9,8 @@ let StoreStrategy = {
         describe('good work', () => {
             describe('create', () => {
                 it('single item', function (done) {
-                    var KEY = 'key';
-                    var VALUE = 'magic-string';
+                    let KEY = 'key';
+                    let VALUE = 'magic-string';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
@@ -33,8 +33,8 @@ let StoreStrategy = {
                 });
 
                 it('should return proper value', (done) => {
-                    var KEY = 'proper';
-                    var VALUE = 'string';
+                    let KEY = 'proper';
+                    let VALUE = 'string';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
@@ -49,9 +49,9 @@ let StoreStrategy = {
 
             describe('update', () => {
                 it('should work properly', (done) => {
-                    var KEY = 'proper';
-                    var VALUE = 'string';
-                    var NEW_VALUE = 'new-string';
+                    let KEY = 'proper';
+                    let VALUE = 'string';
+                    let NEW_VALUE = 'new-string';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
@@ -67,7 +67,7 @@ let StoreStrategy = {
 
             describe('delete', () => {
                 it('should not fail on non exist item', (done) => {
-                    var KEY = 'blabla';
+                    let KEY = 'blabla';
 
                     Promise.resolve()
                         .then(storeStrategy.delete.bind(this, KEY))
@@ -81,8 +81,8 @@ let StoreStrategy = {
                 });
 
                 it('should not fail on non exist item', (done) => {
-                    var KEY = 'pokemon';
-                    var VALUE = 'pikachu';
+                    let KEY = 'pokemon';
+                    let VALUE = 'pikachu';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))

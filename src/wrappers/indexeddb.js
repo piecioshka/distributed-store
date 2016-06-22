@@ -1,13 +1,13 @@
 'use strict';
 
-var request = indexedDB.open("library");
+let request = indexedDB.open("library");
 
 request.onupgradeneeded = () => {
     // The database did not previously exist, so create object stores and indexes.
-    var db = request.result;
-    var store = db.createObjectStore("books", { keyPath: "isbn" });
-    var titleIndex = store.createIndex("by_title", "title", { unique: true });
-    var authorIndex = store.createIndex("by_author", "author");
+    let db = request.result;
+    let store = db.createObjectStore("books", { keyPath: "isbn" });
+    let titleIndex = store.createIndex("by_title", "title", { unique: true });
+    let authorIndex = store.createIndex("by_author", "author");
 
     // Populate with initial data.
     store.put({ title: "Quarry Memories", author: "Fred", isbn: 123456 });

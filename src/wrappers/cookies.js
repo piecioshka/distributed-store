@@ -18,13 +18,14 @@ let api = {
     },
 
     update(name, value) {
-        return api.create.apply(this, arguments);
+        return api.create.apply(api, arguments);
     },
 
     delete(key) {
         return new Promise((resolve) => {
             cookie.remove(key);
-            resolve(true);
+            let isDeleted = cookie.get(key) === undefined;
+            resolve(isDeleted);
         });
     }
 };

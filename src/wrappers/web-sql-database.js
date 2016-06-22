@@ -6,7 +6,7 @@ let createDatabase = () => {
 
 let db = createDatabase();
 
-module.exports = {
+let api = {
     create(name, value) {
         return new Promise((resolve, reject) => {
             db.transaction((tx) => {
@@ -39,7 +39,7 @@ module.exports = {
     },
 
     update(name, value) {
-        return this.create.apply(this, arguments);
+        return api.create.apply(api, arguments);
     },
 
     delete(name) {
@@ -56,3 +56,5 @@ module.exports = {
         });
     }
 };
+
+module.exports = api;

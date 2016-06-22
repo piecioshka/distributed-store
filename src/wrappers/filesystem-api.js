@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+let api = {
     create() {
 
     },
@@ -10,10 +10,12 @@ module.exports = {
     },
 
     update() {
-
+        return api.create.apply(api, arguments);
     },
 
     delete() {
 
     }
 };
+
+module.exports = api;
