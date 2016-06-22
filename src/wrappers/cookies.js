@@ -1,12 +1,12 @@
 'use strict';
 
-let cookie = require('cookie_js').cookie;
+let cookie = require('cookie_js');
 
 module.exports = {
     create(key, value) {
         return new Promise((resolve) => {
-            let status = cookie.set(key, value);
-            resolve(status);
+            cookie.set(key, value);
+            resolve();
         });
     },
 
@@ -14,7 +14,7 @@ module.exports = {
         return new Promise((resolve) => {
             let status = cookie.get(key);
             resolve(status);
-        })
+        });
     },
 
     update(name, value) {
@@ -23,8 +23,8 @@ module.exports = {
 
     delete(key) {
         return new Promise((resolve) => {
-            let status = cookie.remove(key);
-            resolve(status);
-        })
+            cookie.remove(key);
+            resolve();
+        });
     }
 };

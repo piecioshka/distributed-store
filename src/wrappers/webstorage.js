@@ -3,8 +3,8 @@
 module.exports = {
     create(key, value) {
         return new Promise((resolve) => {
-            let status = localStorage.setItem(key, value);
-            resolve(status);
+            localStorage.setItem(key, value);
+            resolve();
         });
     },
 
@@ -21,8 +21,8 @@ module.exports = {
 
     delete(key) {
         return new Promise((resolve) => {
-            let status = localStorage.removeItem(key);
-            resolve(status);
+            localStorage.removeItem(key);
+            resolve();
         });
     }
 };

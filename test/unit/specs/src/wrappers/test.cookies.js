@@ -2,33 +2,32 @@
 
 let cookieStore = window.CoheStore.Cookies;
 
-describe('error handling', function () {
-    
+describe('error handling', () => {
+
 });
 
-describe('good work', function () {
-    describe('create', function () {
+describe('good work', () => {
+    describe('create', () => {
         it('create single row', function (done) {
-            cookieStore.create('key', 'value')
-                .then(function () {
-
-                    done();
-                })
-                .catch(function (error) {
-                    fail(error);
+            cookieStore.create('key', 'magic-value')
+                .then(() => {
+                    cookieStore.read('key').then((value) => {
+                        expect(value).toEqual('magic-value');
+                        done();
+                    });
                 });
         });
     });
 
-    describe('read', function () {
+    describe('read', () => {
 
     });
 
-    describe('update', function () {
+    describe('update', () => {
 
     });
 
-    describe('delete', function () {
+    describe('delete', () => {
 
     });
 });

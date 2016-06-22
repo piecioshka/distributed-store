@@ -2,7 +2,7 @@
 
 var request = indexedDB.open("library");
 
-request.onupgradeneeded = function () {
+request.onupgradeneeded = () => {
     // The database did not previously exist, so create object stores and indexes.
     var db = request.result;
     var store = db.createObjectStore("books", { keyPath: "isbn" });
@@ -15,7 +15,7 @@ request.onupgradeneeded = function () {
     store.put({ title: "Bedrock Nights", author: "Barney", isbn: 345678 });
 };
 
-request.onsuccess = function () {
+request.onsuccess = () => {
     let db = request.result;
 };
 

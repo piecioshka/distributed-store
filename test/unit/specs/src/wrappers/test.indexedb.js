@@ -1,10 +1,10 @@
 'use strict';
 
-describe('error handling', function () {
+describe('error handling', () => {
     
 });
 
 
-describe('good work', function () {
+describe('good work', () => {
     
 });

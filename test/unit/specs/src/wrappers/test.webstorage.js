@@ -1,20 +1,20 @@
 'use strict';
 
-describe('error handling', function () {
+describe('error handling', () => {
 
 });
 
-describe('good work', function () {
-    describe('create', function () {
+describe('good work', () => {
+    describe('create', () => {
         
     });
-    describe('read', function () {
+    describe('read', () => {
 
     });
-    describe('update', function () {
+    describe('update', () => {
 
     });
-    describe('delete', function () {
+    describe('delete', () => {
 
     });
 });
