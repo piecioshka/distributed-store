@@ -1,10 +1,3 @@
 'use strict';
 
-describe('error handling', () => {
-    
-});
-
-
-describe('good work', () => {
-    
-});
+xdescribe('Web SQL Database', () => StoreStrategy.strategy(window.CoheStore.WebSQLDatabase));

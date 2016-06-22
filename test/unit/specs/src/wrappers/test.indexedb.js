@@ -1,10 +1,3 @@
 'use strict';
 
-describe('error handling', () => {
-    
-});
-
-
-describe('good work', () => {
-    
-});
+xdescribe('IndexedDB', () => StoreStrategy.strategy(window.CoheStore.IndexedDB));

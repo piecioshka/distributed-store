@@ -2,7 +2,7 @@
 
 let cookie = require('cookie_js');
 
-module.exports = {
+let api = {
     create(key, value) {
         return new Promise((resolve) => {
             cookie.set(key, value);
@@ -18,13 +18,15 @@ module.exports = {
     },
 
     update(name, value) {
-        return this.create.apply(this, arguments);
+        return api.create.apply(this, arguments);
     },
 
     delete(key) {
         return new Promise((resolve) => {
             cookie.remove(key);
-            resolve();
+            resolve(true);
         });
     }
 };
+
+module.exports = api;

@@ -1,10 +1,3 @@
 'use strict';
 
-describe('error handling', () => {
-    
-});
-
-
-describe('good work', () => {
-    
-});
+xdescribe('FileSystemAPI', () => StoreStrategy.strategy(window.CoheStore.FileSystemAPI));
