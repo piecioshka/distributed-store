@@ -1,7 +1,9 @@
 {
     "private": true,
     "scripts": {
-        "test": "echo 'Open test/unit/ in browser.'"
+        "test": "echo 'Open test/unit/ in browser.'",
+        "build": "webpack",
+        "watch": "webpack -w"
     },
     "devDependencies": {
         "babel-core": "^6.10.4",

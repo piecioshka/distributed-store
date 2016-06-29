@@ -1,4 +1,4 @@
-# cohestore.js
+# distributed-store
 
 > :hammer: Trwała spójność w zapisanych danych po stronie użytkownika.
 

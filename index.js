@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-    Cookies: require('./src/wrappers/cookies'),
-    FileSystemAPI: require('./src/wrappers/filesystem-api'),
-    IndexedDB: require('./src/wrappers/indexeddb'),
-    WebSQLDatabase: require('./src/wrappers/web-sql-database'),
-    WebStorage: require('./src/wrappers/webstorage')
+    Cookies: require('./lib/adapters/cookies'),
+    FileSystemAPI: require('./lib/adapters/file-system-api'),
+    IndexedDB: require('./lib/adapters/indexeddb'),
+    WebSQLDatabase: require('./lib/adapters/web-sql-database'),
+    WebStorage: require('./lib/adapters/webstorage')
 };

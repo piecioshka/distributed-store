@@ -3,9 +3,9 @@
 module.exports = {
     entry: './index',
     output: {
-        library: 'CoheStore',
+        library: 'DistributedStore',
         libraryTarget: 'umd',
-        filename: 'cohestore.js',
+        filename: 'distributed-store.js',
         path: './dist/'
     },
     module: {
