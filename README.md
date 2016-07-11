@@ -13,7 +13,9 @@ Wykorzystujemy do tego celu:
     * https://www.w3.org/TR/2012/WD-quota-api-20120703/
     * Open in Chrome browser: `filesystem:http://localhost/persistent/`
 * [ ] IndexedDB - https://www.w3.org/TR/2011/WD-IndexedDB-20111206/
-* [ ] Web SQL Database - https://www.w3.org/TR/2010/NOTE-webdatabase-20101118/
+* [x] Web SQL Database
+    * https://www.w3.org/TR/webdatabase/
+    * https://www.w3.org/TR/2010/NOTE-webdatabase-20101118/
 * [x] WebStorage (localStorage) - https://www.w3.org/TR/2009/WD-webstorage-20090910/
 
 ## API
