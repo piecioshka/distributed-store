@@ -1,3 +1,3 @@
 'use strict';
 
-xdescribe('WebStorage', () => StoreStrategy.strategy(window.DistributedStore.WebStorage));
+describe('WebStorage', () => StoreStrategy.strategy(window.DistributedStore.WebStorage));

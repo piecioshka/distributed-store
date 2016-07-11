@@ -9,14 +9,14 @@ let StoreStrategy = {
         describe('good work', () => {
             describe('create', () => {
                 it('single item', function (done) {
-                    let KEY = 'key';
+                    let KEY = 'distributed-store:test-create';
                     let VALUE = 'magic-string';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
                         .then(storeStrategy.read.bind(this, KEY))
-                        .then((value) => {
-                            expect(value).toEqual(VALUE);
+                        .then((options) => {
+                            expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
                         .then(done);
@@ -24,23 +24,25 @@ let StoreStrategy = {
             });
 
             describe('read', () => {
-                it('should return non when non exist value', (done) => {
-                    storeStrategy.read('1khj23jk123kj123')
-                        .then((value) => {
-                            expect(value).toEqual(undefined);
-                        })
-                        .then(done);
+                it('should return undefined when value is not exist', (done) => {
+                    let KEY = 'distributed-store:test-read-not-exists';
+
+                    storeStrategy.read(KEY)
+                        .then((options) => {
+                            expect(options.value).toEqual(undefined);
+                            done();
+                        });
                 });
 
                 it('should return proper value', (done) => {
-                    let KEY = 'proper';
+                    let KEY = 'distributed-store:test-read';
                     let VALUE = 'string';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
                         .then(storeStrategy.read.bind(this, KEY))
-                        .then((value) => {
-                            expect(value).toEqual(VALUE);
+                        .then((options) => {
+                            expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
                         .then(done);
@@ -49,7 +51,7 @@ let StoreStrategy = {
 
             describe('update', () => {
                 it('should work properly', (done) => {
-                    let KEY = 'proper';
+                    let KEY = 'distributed-store:test-update';
                     let VALUE = 'string';
                     let NEW_VALUE = 'new-string';
 
@@ -57,8 +59,8 @@ let StoreStrategy = {
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
                         .then(storeStrategy.update.bind(this, KEY, NEW_VALUE))
                         .then(storeStrategy.read.bind(this, KEY))
-                        .then((value) => {
-                            expect(value).toEqual(NEW_VALUE);
+                        .then((options) => {
+                            expect(options.value).toEqual(NEW_VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
                         .then(done);
@@ -66,37 +68,31 @@ let StoreStrategy = {
             });
 
             describe('delete', () => {
-                it('should not fail on non exist item', (done) => {
-                    let KEY = 'blabla';
+                it('should fail when try to delete non-exist item', (done) => {
+                    let KEY = 'file-not-defined';
 
                     Promise.resolve()
                         .then(storeStrategy.delete.bind(this, KEY))
-                        .then((status) => {
-                            expect(status).toBe(true);
-                        })
-                        .then(done)
-                        .catch(() => {
-                            fail();
+                        .then(() => {
+                            expect(true).toBe(true);
+                            done();
                         });
                 });
 
-                it('should not fail on non exist item', (done) => {
-                    let KEY = 'pokemon';
+                it('should works after delete created item', (done) => {
+                    let KEY = 'distributed-store:test-delete';
                     let VALUE = 'pikachu';
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
                         .then(storeStrategy.read.bind(this, KEY))
-                        .then((value) => {
-                            expect(value).toEqual(VALUE);
+                        .then((options) => {
+                            expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
-                        .then((status) => {
-                            expect(status).toBe(true);
-                        })
-                        .then(done)
-                        .catch(() => {
-                            fail();
+                        .then(() => {
+                            expect(true).toBe(true);
+                            done();
                         });
                 });
             });

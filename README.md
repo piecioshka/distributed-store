@@ -8,7 +8,10 @@ Chcemy uzyskać jak najbardziej to możliwe trwałe zapisanie danych po stronie 
 Wykorzystujemy do tego celu:
 
 * [x] Cookies
-* [ ] Filesystem API - https://www.w3.org/TR/2012/WD-quota-api-20120703/
+* [x] Filesystem API
+    * http://www.html5rocks.com/en/tutorials/file/filesystem/
+    * https://www.w3.org/TR/2012/WD-quota-api-20120703/
+    * Open in Chrome browser: `filesystem:http://localhost/persistent/`
 * [ ] IndexedDB - https://www.w3.org/TR/2011/WD-IndexedDB-20111206/
 * [ ] Web SQL Database - https://www.w3.org/TR/2010/NOTE-webdatabase-20101118/
 * [x] WebStorage (localStorage) - https://www.w3.org/TR/2009/WD-webstorage-20090910/
