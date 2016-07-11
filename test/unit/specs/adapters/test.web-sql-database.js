@@ -1,3 +1,3 @@
 'use strict';
 
-xdescribe('Web SQL Database', () => StoreStrategy.strategy(window.DistributedStore.WebSQLDatabase));
+xdescribe('Web SQL Database Adapter', () => StoreStrategy.strategy(window.DistributedStore.WebSQLDatabase));

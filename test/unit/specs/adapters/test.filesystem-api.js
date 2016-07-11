@@ -1,3 +1,3 @@
 'use strict';
 
-describe('FilesystemAPI', () => StoreStrategy.strategy(window.DistributedStore.FilesystemAPI));
+describe('FilesystemAPI Adapter', () => StoreStrategy.strategy(window.DistributedStore.FilesystemAPI));

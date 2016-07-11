@@ -1,3 +1,3 @@
 'use strict';
 
-xdescribe('IndexedDB', () => StoreStrategy.strategy(window.DistributedStore.IndexedDB));
+xdescribe('IndexedDB Adapter', () => StoreStrategy.strategy(window.DistributedStore.IndexedDB));

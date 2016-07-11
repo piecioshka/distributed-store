@@ -1,3 +1,3 @@
 'use strict';
 
-describe('Cookies Wrapper', () => StoreStrategy.strategy(window.DistributedStore.Cookies));
+describe('Cookies Adapter', () => StoreStrategy.strategy(window.DistributedStore.Cookies));
