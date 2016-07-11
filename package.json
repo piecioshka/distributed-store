@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "test": "echo 'Open test/unit/ in browser.'",
+        "test": "echo 'Open in browser: http://localhost/distributed-store/test/unit/'",
         "build": "webpack",
         "watch": "webpack -w"
     },
