@@ -14,11 +14,17 @@ let StoreStrategy = {
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(storeStrategy.read.bind(this, KEY))
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(done);
                 });
             });
@@ -40,11 +46,17 @@ let StoreStrategy = {
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(storeStrategy.read.bind(this, KEY))
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(done);
                 });
             });
@@ -57,12 +69,21 @@ let StoreStrategy = {
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(storeStrategy.update.bind(this, KEY, NEW_VALUE))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(storeStrategy.read.bind(this, KEY))
                         .then((options) => {
                             expect(options.value).toEqual(NEW_VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(done);
                 })
             });
@@ -73,7 +94,8 @@ let StoreStrategy = {
 
                     Promise.resolve()
                         .then(storeStrategy.delete.bind(this, KEY))
-                        .then(() => {
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
                             expect(true).toBe(true);
                             done();
                         });
@@ -85,12 +107,16 @@ let StoreStrategy = {
 
                     Promise.resolve()
                         .then(storeStrategy.create.bind(this, KEY, VALUE))
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
+                        })
                         .then(storeStrategy.read.bind(this, KEY))
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
                         .then(storeStrategy.delete.bind(this, KEY))
-                        .then(() => {
+                        .then((options) => {
+                            expect(options.success).toEqual(true);
                             expect(true).toBe(true);
                             done();
                         });

@@ -4,26 +4,29 @@
 
 ## Publiczne API
 
-### `create(name: string, value: string)`
+### `create(key: string, value: string)`
 
-Tworzy parę `name=value`.
+Tworzy parę `key=value`.
+Zwraca informacje o tym, czy udało się zapisać.
 
-### `read(name: string)`
+### `read(key: string)`
 
-Pobiera wartość spod klucza `name`.
+Pobiera wartość spod klucza `key`.
 
-### `update(name: string, value: string)`
+### `update(key: string, value: string)`
 
-Aktualizuje wartość spod klucza `name`
+Aktualizuje wartość spod klucza `key`.
+Zwraca informacje o tym, czy udało się zaktualizować dane.
 
-### `delete(name: string)`
+### `delete(key: string)`
 
-Usuwa wartość i klucz `name`.
+Usuwa wartość i klucz `key`.
+Zwraca informacje o tym, czy udało się usunąć dane.
 
 ## Zasada działania
 
-1. [ ] Mamy 4 metody na najwyższym poziomie.
-2. [ ] Podczas zapisywania (op. CREATE, UPDATE) zapisujemy wszędzie tam, gdzie jest to możliwe.
+1. [x] Mamy 4 metody na najwyższym poziomie: CREATE, READ, UPDATE, DELETE.
+2. [x] Podczas zapisywania (op. CREATE, UPDATE) zapisujemy wszędzie tam, gdzie jest to możliwe.
 3. [ ] Podczas odczytywania (op. READ), pobieramy wszystkie wartości ze wszystkich storage-ów.
 Jeśli jeden lub więcej (ale nie więcej niż połowa) storage-ów jest pusta,
 to bierzemy je pod uwagę podczas pobierania i wpisujemy w puste storage-e
