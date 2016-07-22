@@ -1,15 +1,10 @@
 'use strict';
 
 describe('Distributed Store', () => {
-    it('should be defined', () => {
-        expect(window.DistributedStore).toEqual(jasmine.any(Object));
-    });
-
-    describe('Public API', () => {
-        let KEY = 'ds:api:key';
-        let NON_EXIST_KEY = 'ds:api:key-non-exist';
-        let VALUE = 'ds-value';
-        let NEW_VALUE = 'ds-value-new';
+    describe('General', () => {
+        it('should be defined', () => {
+            expect(window.DistributedStore).toEqual(jasmine.any(Object));
+        });
 
         it('should contains 4 methods', () => {
             let methods = ['create', 'read', 'update', 'delete'];
@@ -18,6 +13,13 @@ describe('Distributed Store', () => {
                 expect(window.DistributedStore[method]).toEqual(jasmine.any(Function));
             });
         });
+    });
+
+    describe('Public API', () => {
+        let KEY = 'ds:api:key';
+        let NON_EXIST_KEY = 'ds:api:key-non-exist';
+        let VALUE = 'ds-value';
+        let NEW_VALUE = 'ds-value-new';
 
         describe('API: create', () => {
             it('should all item be undefined', (done) => {

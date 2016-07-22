@@ -7,7 +7,7 @@
 ### `create(key: string, value: string)`
 
 Tworzy parę `key=value`.
-Zwraca informacje o tym, czy udało się zapisać.
+Zwraca informację o tym, czy udało się zapisać.
 
 ### `read(key: string)`
 
@@ -16,12 +16,12 @@ Pobiera wartość spod klucza `key`.
 ### `update(key: string, value: string)`
 
 Aktualizuje wartość spod klucza `key`.
-Zwraca informacje o tym, czy udało się zaktualizować dane.
+Zwraca informację o tym, czy udało się zaktualizować dane.
 
 ### `delete(key: string)`
 
 Usuwa wartość i klucz `key`.
-Zwraca informacje o tym, czy udało się usunąć dane.
+Zwraca informację o tym, czy udało się usunąć dane.
 
 ## Zasada działania
 
