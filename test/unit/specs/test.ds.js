@@ -21,7 +21,7 @@ describe('Distributed Store', () => {
         let VALUE = 'ds-value';
         let NEW_VALUE = 'ds-value-new';
 
-        describe('API: create', () => {
+        describe('method: create', () => {
             it('should all item be undefined', (done) => {
                 window.DistributedStore.read(KEY)
                     .then((response) => {
@@ -53,7 +53,7 @@ describe('Distributed Store', () => {
             });
         });
 
-        describe('API: read', () => {
+        describe('method: read', () => {
             it('should read from', (done) => {
                 window.DistributedStore.read(KEY)
                     .then((response) => {
@@ -65,7 +65,7 @@ describe('Distributed Store', () => {
             });
         });
 
-        describe('API: update', () => {
+        describe('method: update', () => {
             it('should update everywhere', (done) => {
                 window.DistributedStore.update(KEY, NEW_VALUE)
                     .then((results) => {
@@ -87,7 +87,7 @@ describe('Distributed Store', () => {
             });
         });
 
-        describe('API: delete', () => {
+        describe('method: delete', () => {
             it('should delete everywhere without errors', (done) => {
                 window.DistributedStore.delete(KEY, VALUE)
                     .then((results) => {
