@@ -21,7 +21,7 @@ let StoreStrategy = {
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
-                        .then(storeStrategy.delete.bind(this, KEY))
+                        .then(storeStrategy.remove.bind(this, KEY))
                         .then((options) => {
                             expect(options.success).toEqual(true);
                         })
@@ -53,7 +53,7 @@ let StoreStrategy = {
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
-                        .then(storeStrategy.delete.bind(this, KEY))
+                        .then(storeStrategy.remove.bind(this, KEY))
                         .then((options) => {
                             expect(options.success).toEqual(true);
                         })
@@ -80,7 +80,7 @@ let StoreStrategy = {
                         .then((options) => {
                             expect(options.value).toEqual(NEW_VALUE);
                         })
-                        .then(storeStrategy.delete.bind(this, KEY))
+                        .then(storeStrategy.remove.bind(this, KEY))
                         .then((options) => {
                             expect(options.success).toEqual(true);
                         })
@@ -88,12 +88,12 @@ let StoreStrategy = {
                 })
             });
 
-            describe('delete', () => {
-                it('should fail when try to delete non-exist item', (done) => {
+            describe('remove', () => {
+                it('should fail when try to remove non-exist item', (done) => {
                     let KEY = 'file-not-defined';
 
                     Promise.resolve()
-                        .then(storeStrategy.delete.bind(this, KEY))
+                        .then(storeStrategy.remove.bind(this, KEY))
                         .then((options) => {
                             expect(options.success).toEqual(true);
                             expect(true).toBe(true);
@@ -101,8 +101,8 @@ let StoreStrategy = {
                         });
                 });
 
-                it('should works after delete created item', (done) => {
-                    let KEY = 'distributed-store:test-delete';
+                it('should works after remove created item', (done) => {
+                    let KEY = 'distributed-store:test-remove';
                     let VALUE = 'pikachu';
 
                     Promise.resolve()
@@ -114,7 +114,7 @@ let StoreStrategy = {
                         .then((options) => {
                             expect(options.value).toEqual(VALUE);
                         })
-                        .then(storeStrategy.delete.bind(this, KEY))
+                        .then(storeStrategy.remove.bind(this, KEY))
                         .then((options) => {
                             expect(options.success).toEqual(true);
                             expect(true).toBe(true);

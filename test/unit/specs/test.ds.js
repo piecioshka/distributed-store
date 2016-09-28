@@ -7,7 +7,7 @@ describe('Distributed Store', () => {
         });
 
         it('should contains 4 methods', () => {
-            let methods = ['create', 'read', 'update', 'delete'];
+            let methods = ['create', 'read', 'update', 'remove'];
 
             methods.forEach((method) => {
                 expect(window.DistributedStore[method]).toEqual(jasmine.any(Function));
@@ -87,9 +87,9 @@ describe('Distributed Store', () => {
             });
         });
 
-        describe('method: delete', () => {
-            it('should delete everywhere without errors', (done) => {
-                window.DistributedStore.delete(KEY, VALUE)
+        describe('method: remove', () => {
+            it('should remove everywhere without errors', (done) => {
+                window.DistributedStore.remove(KEY, VALUE)
                     .then((results) => {
                         results.forEach((options) => {
                             expect(options.success).toBe(true);
@@ -109,7 +109,7 @@ describe('Distributed Store', () => {
             });
 
             it('should deleted non existed values too', (done) => {
-                window.DistributedStore.delete(NON_EXIST_KEY)
+                window.DistributedStore.remove(NON_EXIST_KEY)
                     .then((response) => {
                         response.forEach((options) => {
                             expect(options.success).toBe(true);

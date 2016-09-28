@@ -1,9 +1,11 @@
 {
     "private": true,
+    "name": "distributed-store",
+    "version": "0.0.0",
     "scripts": {
         "test": "echo 'Open in browser: http://localhost/distributed-store/test/unit/'",
-        "build": "webpack",
-        "watch": "webpack -w"
+        "build": "webpack -p",
+        "watch": "webpack -w --progress"
     },
     "devDependencies": {
         "babel-core": "^6.10.4",
