@@ -1,6 +1,6 @@
 # distributed-store
 
-> :hammer: Trwała spójność w zapisanych danych po stronie użytkownika.
+:hammer: Zapisz dane TRWALE po stronie użytkownika
 
 ## Publiczne API
 
