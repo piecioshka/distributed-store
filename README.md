@@ -51,3 +51,7 @@ Wykorzystujemy do tego celu:
     * https://www.w3.org/TR/2010/NOTE-webdatabase-20101118/
 * [x] WebStorage (localStorage)
     * https://www.w3.org/TR/2009/WD-webstorage-20090910/
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
